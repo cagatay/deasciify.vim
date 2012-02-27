@@ -5,6 +5,41 @@ if !exists("g:turkish_decision_list")
     source turkish_decision_list.vim
 endif
 
+let g:turkish_pattern_table = {
+}
+
+let g:turkish_char_alist = {
+    'c': 'ç',
+    'C': 'Ç',
+    'ç': 'c',
+    'Ç': 'C',
+
+    'g': 'ğ',
+    'G': 'Ğ',
+    'ğ': 'g',
+    'Ğ': 'G',
+
+    'i': 'ı',
+    'I': 'İ',
+    'ı': 'i',
+    'İ': 'I',
+
+    'o': 'ö',
+    'O': 'Ö',
+    'ö': 'o',
+    'Ö': 'O',
+
+    's': 'ş',
+    'S': 'Ş',
+    'ş': 's',
+    'Ş': 'S',
+
+    'u': 'ü',
+    'U': 'Ü'
+    'ü': 'u',
+    'Ü': 'U'
+}
+
 function! Deasciify()
     normal gv"xy
     let @x = Deasciify_text(@x)
@@ -27,7 +62,7 @@ function! Deasciify_text(text)
 endfunction
 
 function! Deasciify_needs_correction(char)
-    return 0
+    let tr = get(g:turkish_char_alist, a:char, a:char)
 endfunction
 
 function! Deasciify_toggle_accent(char)
