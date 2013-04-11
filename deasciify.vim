@@ -35,9 +35,9 @@ let g:turkish_char_alist = {
     'Ş': 'S',
 
     'u': 'ü',
-    'U': 'Ü'
+    'U': 'Ü',
     'ü': 'u',
-    'Ü': 'U'
+    'Ü': 'U',
 }
 
 function! Deasciify()
